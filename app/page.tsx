@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-    <section className="py-24">
-      <div className="container">
-        <h1 className="flex mx-auto text-2xl font-medium">Client Onboarding Form</h1>
+    <section className="py-6">
+      <div className="container bg- mx-auto rounded-xl">
+        <h1 className="pt-10 text-center text-4xl font-semibold font-sans text-grey-800">Client Onboarding Form</h1>
         <OnBoardingForm/>
       </div>
     </section>

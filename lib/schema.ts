@@ -1,4 +1,3 @@
-// app/schema/onboardSchema.ts
 import { z } from "zod";
 
 export const OnboardSchema = z.object({
@@ -6,7 +5,10 @@ export const OnboardSchema = z.object({
     .string()
     .min(2, "Full name must be at least 2 characters")
     .max(80, "Full name must be under 80 characters")
-    .regex(/^[A-Za-z][A-Za-z '\-]*$/, "Only letters, spaces, ' and - are allowed"),
+    .regex(
+      /^[A-Za-z][A-Za-z '\-]*$/,
+      "Only letters, spaces, ' and - are allowed"
+    ),
 
   email: z.string().email("Invalid email address"),
 
@@ -32,10 +34,9 @@ export const OnboardSchema = z.object({
       message: "Date must be today or later",
     }),
 
-  acceptTerms: z.boolean().refine(
-  (val) => val === true,
-  { message: "You must accept the terms." }
-)
+  acceptTerms: z
+    .boolean()
+    .refine((val) => val === true, { message: "You must accept the terms." }),
 });
 
 export type OnboardFormData = z.infer<typeof OnboardSchema>;
