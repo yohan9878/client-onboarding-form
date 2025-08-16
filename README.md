@@ -13,14 +13,20 @@ npm run test
 
 NEXT_PUBLIC_ONBOARD_URL=https://example.com/api/onboard
 
-------Features------
+## Onboarding Form with React Hook Form & Zod
 
-Validation via Zod
+I developed a type-safe onboarding form using Next.js, React Hook Form (RHF), and Zod. The form collects user details such as full name, email, company name, services of interest, budget, project start date, and terms acceptance.
 
-Inline error messages
+* Validation is handled with Zod schemas, ensuring strong runtime validation and type safety.
 
-Success/error alerts
+* React Hook Form efficiently manages form state, validation errors, and submission.
 
-Query param pre-fill for service
+* Integrated zodResolver to connect Zod validation directly into RHF.
 
-Accessible labels, keyboard navigation
+* Implemented service selection with checkboxes using type-safe enums.
+
+* Added real-time preview panel to display submitted form data.
+
+* Included URL param pre-fill logic (e.g., pre-selecting a service from query string).
+
+* Form submission sends data to a backend API (NEXT_PUBLIC_ONBOARD_URL) with proper error  handling.
